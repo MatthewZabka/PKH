@@ -1,0 +1,28 @@
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.synctex.gz
+*.synctex.gz(busy)
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.vrb
+
+# Editors
+*~
+*.swp
+*.swo
+
+# Mac / OS cruft
+.DS_Store
