@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}   % For figures
+\usepackage{cite}       % For compressed citations
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{Persistent Khovanov Homology for Knots and Banded Knots}}\\[1.5em]
+
+    {\large Matthew Zabka}\\
+    Department of Mathematics and Statistics, Southwest Minnesota State University\\
+    Email: \texttt{matthew.zabka@smsu.edu}\\[1em]
+
+    {\large Anzor Beridze}\\
+    School of Mathematics and Computer Science, Kutaisi International University\\
+    Email: \texttt{anzor.beridze@kiu.edu.ge}\\[2em]
+
+    {\large \textbf{Draft Proposal for Internal and Interdisciplinary Discussion}}\\[0.5em]
+    (This document is a preliminary working draft intended for conceptual development and collaborative review.
+    Additional authors may be added as the project evolves.)
+\end{center}
+
+\vspace{2em}
+
+% Create a new 1st level heading
+\section*{Introduction}
+
+Knot theory has emerged as a powerful framework for understanding the geometry and topology of biological macromolecules. 
+DNA often becomes knotted or linked during replication, transcription, and packaging, and cells rely on specialized 
+enzymes such as topoisomerases to regulate this topological complexity~\cite{Stasiak2009DNAunlinking,Bates2022Topoisomerases}. 
+Proteins, too, can display deeply knotted or slipknotted configurations whose folding pathways and functional implications 
+remain the subject of active investigation~\cite{Faisca2015KnottedProteins}. 
+At larger scales, chromatin and chromosomes exhibit intricate polymeric entanglements that influence their spatial 
+organization and epigenetic state~\cite{Smrek2017KnottedChromatin}. 
+Even RNA, although generally thought to avoid deep knots, can exhibit nontrivial entanglements and topological 
+features in three-dimensional structural models~\cite{Boniecki2021RNAEntanglement}. 
+These examples illustrate that knot theory---including both classical knot invariants and newer homological tools---is 
+well positioned to contribute to the quantitative characterization of complex, noisy, or partially observed biological structures.
+
+Despite this widespread appearance of knotted and entangled structures in biology, in many experimental settings the 
+topology of a macromolecule cannot be determined exactly. Cryo--electron microscopy, for example, often produces 
+three--dimensional density maps with unresolved or ambiguous loop regions, leaving substantial uncertainty about the 
+underlying geometric configuration~\cite{Henderson2013CryoEM}. Chromatin conformation capture techniques such as Hi--C 
+provide only pairwise contact frequencies rather than full spatial embeddings, making it impossible to determine a 
+definitive knot or link type from the data~\cite{Dekker2013ChromatinHiC}. Even when explicit polymer models are used to 
+reconstruct chromosome geometry, the resulting embeddings may display topological features---including knots, links, 
+and slipknots---that fluctuate across model realizations or remain only partially localized~\cite{Benedetti2014ChromosomeTopology,
+Millett2005KnotLocalization}. These challenges highlight the need for mathematical tools capable of quantifying 
+topological structure in settings where only incomplete, noisy, or ensemble-based information is available. Persistent 
+homology provides a natural framework for addressing such uncertainty, allowing knot-like features to be detected, 
+tracked, and compared across varying spatial scales or model parameters.
+
+In addition to uncertainty arising from incomplete data, many biological processes modify molecular topology through 
+operations that are mathematically equivalent to attaching or removing bands. Enzymes such as topoisomerases and 
+site--specific recombinases alter DNA configuration by cutting, twisting, and rejoining strands, producing controlled 
+topological changes that closely parallel band surgeries in knot theory~\cite{Wang1996TopoReview,Crisona1999RecombinationCell}. 
+Such reconnection events can generate or remove crossings, change knot or link type, or create composite structures 
+from simpler precursors, and therefore represent natural biological analogues of band attachments. More broadly, the 
+dynamic organization of chromatin and other polymeric biomolecules involves local strand--passage and loop--formation 
+events that likewise resemble band moves at a coarse topological level~\cite{Stasiak1988Science}. Despite the ubiquity 
+of these band--like transformations in molecular biology, the mathematical theory of \emph{banded knots} has not been 
+systematically developed in this context. This gap suggests an opportunity to integrate band surgery with 
+topological data analysis, enabling new tools for detecting, classifying, and quantifying biologically relevant 
+topological modifications in settings where experimental resolution is limited.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Research Objectives and Proposed Approach}
+
+The goal of this project is to develop a new mathematical and computational framework for analyzing knot-like
+structures in settings where both topological uncertainty and biologically meaningful modifications must be taken into
+account. Building on the foundations of topological data analysis~\cite{Carlsson2009TopologyAndData} and the algebraic
+theory of multiparameter persistence modules~\cite{CarlssonZomorodian2009}, we propose to construct a bi\-parameter
+persistence model in which a geometric ``distance'' parameter identifies the underlying knotted core of a structure,
+while an independent ``density'' parameter reveals additional strands, attachments, or band--like features that may
+arise from enzymatic activity or incomplete structural reconstruction. This bifiltration will serve as the basis for
+a theory of \emph{persistent Khovanov homology}, extending both the classical Khovanov homology of links
+\cite{Khovanov2000} and its behavior under controlled knot operations~\cite{Turner2006Khovanov} into a parameterized and
+data-driven setting. By drawing on the stability principles that underpin persistent homology~\cite{CohenSteiner2007Stability},
+our objective is to establish a framework in which Khovanov-theoretic information can be tracked across spatial scales
+and through biologically motivated band surgeries, enabling the detection and classification of knot-like configurations
+even when full geometric information is unavailable or when the topology itself may change.
+
+%%%%%% Bibliography %%%%%%%%
+
+\bibliographystyle{IEEEtran}
+\bibliography{master}
+
+\end{document}
